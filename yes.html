@@ -1,1 +1,74 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yay! ❤️</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #ffe6e6;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1 {
+            color: #ff4d4d;
+            font-size: 2.5rem;
+        }
+        p {
+            font-size: 1.5rem;
+            color: #444;
+        }
+        .btn {
+            font-size: 1.5rem;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s ease;
+            background-color: #ff4d4d;
+            color: white;
+        }
+        .btn:hover {
+            background-color: #cc0000;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            width: 250px;
+        }
+        /* Added the button style inside the main CSS */
+        .myButton {
+            background-color: #ff4d4d;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        .myButton:hover {
+            background-color: #cc0000;
+        }
+    </style>
+</head>
+<body>
+    <iframe src="music.html" allow="autoplay" style="display: none;"></iframe>
+
+    <h1>HOORAYYYY!</h1>
+
+    <!-- DO NOT CLICK BUTTON (Now redirects to secret.html) -->
+    <button class="myButton" onclick="window.location.href='secret.html';">DO NOT CLICK THIS BUTTON</button>
+
+    <!-- Cute Message -->
+    <p>My valentine is the most beautiful girl in the world!!</p>
+
+</body>
+</html>
