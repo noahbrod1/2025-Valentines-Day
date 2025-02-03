@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,7 @@
         body {
             font-family: 'Arial', sans-serif;
             text-align: center;
-            background-color: #ffe6e6;
+            background-color: #ffffe0;
             margin: 0;
             display: flex;
             flex-direction: column;
@@ -16,10 +17,12 @@
             justify-content: center;
             height: 100vh;
         }
+
         h1 {
-            color: #ff4d4d;
+            color: #ff0000;
             font-size: 2.5rem;
         }
+
         .heart {
             width: 100px;
             height: 100px;
@@ -27,10 +30,12 @@
             position: relative;
             display: inline-block;
             transform: rotate(-45deg);
-            margin-bottom: 20px;
+            margin-top: 50px; /* Moves the heart down */
             animation: heartbeat 1s infinite;
         }
-        .heart:before, .heart:after {
+
+        .heart:before,
+        .heart:after {
             content: "";
             width: 100px;
             height: 100px;
@@ -38,22 +43,35 @@
             border-radius: 50%;
             position: absolute;
         }
+
         .heart:before {
             top: -50px;
             left: 0;
         }
+
         .heart:after {
             left: 50px;
             top: 0;
         }
+
         @keyframes heartbeat {
-            0%, 100% { transform: scale(1) rotate(-45deg); }
-            50% { transform: scale(1.2) rotate(-45deg); }
+            0%, 100% {
+                transform: scale(1) rotate(-45deg);
+            }
+            50% {
+                transform: scale(1.2) rotate(-45deg);
+            }
         }
+
+        /* Make buttons stay side by side */
         .btn-container {
             display: flex;
-            gap: 15px;
+            justify-content: center; /* Centers them */
+            align-items: center;
+            gap: 20px; /* Adds space between buttons */
+            margin-top: 50px;
         }
+
         button {
             font-size: 1.5rem;
             padding: 10px 20px;
@@ -62,43 +80,42 @@
             border-radius: 10px;
             transition: 0.3s ease;
         }
+
         #yes {
             background-color: #ff4d4d;
             color: white;
         }
+
         #yes:hover {
             background-color: #cc0000;
         }
+
         #no {
             background-color: #ddd;
             color: black;
-            position: absolute;
         }
+
     </style>
 </head>
-<body>
 
-    <h1>Will You Be My Valentine? ❤️</h1>
+<body>
+    <img src="noahval.JPG" alt="Noah" width="350">
+
+    <h1>Will You Be My Valentine, Trinity?</h1>
     <div class="heart"></div>
+
+    <!-- Buttons -->
     <div class="btn-container">
         <button id="yes" onclick="goToNextPage()">Yes</button>
-        <button id="no">No</button>
+        <button id="yes" onclick="goToNextPage()">Yes</button>
     </div>
 
     <script>
         function goToNextPage() {
             window.location.href = "yes.html"; // Redirects to yes.html
         }
-
-        let noButton = document.getElementById('no');
-
-        noButton.addEventListener('mouseover', function() {
-            let x = Math.random() * (window.innerWidth - 100);
-            let y = Math.random() * (window.innerHeight - 100);
-            noButton.style.left = `${x}px`;
-            noButton.style.top = `${y}px`;
-        });
     </script>
 
 </body>
+
 </html>
