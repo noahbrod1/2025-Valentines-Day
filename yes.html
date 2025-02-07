@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>She said yes!</title>
+    <title>Yay! ❤️</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -16,14 +16,17 @@
             justify-content: center;
             height: 100vh;
         }
+
         h1 {
             color: #ff4d4d;
             font-size: 2.5rem;
         }
+
         p {
             font-size: 1.5rem;
             color: #444;
         }
+
         .btn {
             font-size: 1.5rem;
             padding: 10px 20px;
@@ -31,44 +34,33 @@
             cursor: pointer;
             border-radius: 10px;
             transition: 0.3s ease;
-            background-color: #ff4d4d;
+        }
+
+        #dontClick {
+            background-color: black;
             color: white;
         }
-        .btn:hover {
-            background-color: #cc0000;
-        }
-        img {
-            display: block;
-            margin: 20px auto;
-            width: 250px;
-        }
-        /* Added the button style inside the main CSS */
-        .myButton {
-            background-color: #ff4d4d;
-            color: white;
-            font-size: 18px;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: 0.3s ease;
-        }
-        .myButton:hover {
-            background-color: #cc0000;
+
+        #dontClick:hover {
+            background-color: red;
         }
     </style>
 </head>
 <body>
-    <img src="trin.jpg" alt="Noah" width="350">
 
-    <h1>HOORAYYYY!</h1>
+    <h1>HOORAYYYY! 🎉</h1>
+    <p></p>
 
-    <h2>I CANT WAIT TO SPEND FEBRUARY 14TH WITH MY BLASIAN PRINCESS</h2>
-   
+    <button id="dontClick" onclick="goToSecretPage()">Don't Click Me</button>
 
-   
+    <script>
+        function goToSecretPage() {
+            window.location.href = "secret.html"; // Redirects to secret.html
+        }
+    </script>
 
 </body>
 </html>
+
 
 
