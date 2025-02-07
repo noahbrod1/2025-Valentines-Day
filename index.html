@@ -16,6 +16,7 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
+            overflow: hidden; /* Prevents scrollbars */
         }
 
         h1 {
@@ -30,7 +31,7 @@
             position: relative;
             display: inline-block;
             transform: rotate(-45deg);
-            margin-top: 50px; /* Moves the heart down */
+            margin-top: 50px;
             animation: heartbeat 1s infinite;
         }
 
@@ -63,12 +64,12 @@
             }
         }
 
-        /* Make buttons stay side by side */
+        /* Centering buttons */
         .btn-container {
             display: flex;
-            justify-content: center; /* Centers them */
+            justify-content: center;
             align-items: center;
-            gap: 20px; /* Adds space between buttons */
+            gap: 20px;
             margin-top: 50px;
         }
 
@@ -94,7 +95,6 @@
             background-color: #ddd;
             color: black;
         }
-
     </style>
 </head>
 
@@ -105,21 +105,47 @@
 
     <h1>Will You Be My Valentine, Trinity?</h1>
     <div class="heart"></div>
-    
 
     <!-- Buttons -->
     <div class="btn-container">
-        <button id="yes" onclick="goToNextPage()">Yes</button>
-        <button id="yes" onclick="goToNextPage()">Yes</button>
+        <button id="yes" onclick="startFireworks()">Yes</button>
+        <button id="no" onclick="goToNoPage()">No</button>
     </div>
 
+    <!-- Fireworks.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2/dist/index.umd.min.js"></script>
+
     <script>
-        function goToNextPage() {
-            window.location.href = "yes.html"; // Redirects to yes.html
+        function goToNoPage() {
+            window.location.href = "no.html"; // Redirects to no.html
+        }
+    </script>
+
+    <script>
+        function startFireworks() {
+            // Create fireworks effect
+            const container = document.body;
+            const fireworks = new Fireworks.default(container, {
+                speed: 3,
+                acceleration: 1.05,
+                friction: 0.97,
+                gravity: 1.5,
+                particles: 150,
+                traceLength: 3,
+                traceSpeed: 10,
+                explosion: 5,
+            });
+
+            fireworks.start();
+
+            // Stop fireworks after 4 seconds and go to yes.html
+            setTimeout(() => {
+                fireworks.stop();
+                window.location.href = "yes.html"; // Redirect to yes.html
+            }, 4000); // Fireworks show for 4 seconds
         }
     </script>
 
 </body>
-
 </html>
 
